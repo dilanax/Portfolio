@@ -52,7 +52,7 @@ export default function Portfolio() {
     },
     {
       title: 'Online E-Shopping Store',
-      subtitle: ' E-commerce Store',
+      subtitle: ' E-commerce Platform',
       description:
         'Feature-rich e-commerce platform with CRUD operations, product management, and shopping cart functionality.',
       tech: ['JavaScript', 'HTML', 'CSS', 'PHP'],
