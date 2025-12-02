@@ -42,7 +42,7 @@ export default function Portfolio() {
   const projects = [
     {
       title: 'Hasthi Safari Cottage',
-      subtitle: 'Hotel Management System',
+      subtitle: 'Full-stack Hotel Management System',
       description:
         'Complete hotel management solution for Hasthi Safari Cottage in Ambilipitiya with booking, room management, and customer tracking features.',
       tech: ['React', 'Vite', 'TailwindCSS', 'JavaScript'],
@@ -52,7 +52,7 @@ export default function Portfolio() {
     },
     {
       title: 'Online E-Shopping Store',
-      subtitle: 'Full-Stack E-commerce Platform',
+      subtitle: ' E-commerce Store',
       description:
         'Feature-rich e-commerce platform with CRUD operations, product management, and shopping cart functionality.',
       tech: ['JavaScript', 'HTML', 'CSS', 'PHP'],
