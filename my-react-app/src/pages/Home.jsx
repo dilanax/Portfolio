@@ -30,14 +30,15 @@ export default function Portfolio() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const downloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/Dilan_Avishka_CV.pdf'; // file inside public folder
-    link.download = 'Dilan_Avishka_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+const downloadCV = () => {
+  const link = document.createElement('a');
+  link.href = '/d.pdf';            // ✅ URL path
+  link.download = 'Dilan_CV.pdf';  // ✅ just a file name, no slash
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   const projects = [
     {
