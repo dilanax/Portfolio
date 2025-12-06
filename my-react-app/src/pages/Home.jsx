@@ -32,7 +32,7 @@ export default function Portfolio() {
 
 const downloadCV = () => {
   const link = document.createElement('a');
-  link.href = '/dilancv.pdf?v=3';            // ✅ URL path
+  link.href = '/Dilan\'s CV.pdf?v=3';            // ✅ URL path
   link.download = 'Dilan\'s CV.pdf';  // ✅ just a file name, no slash
   document.body.appendChild(link);
   link.click();
