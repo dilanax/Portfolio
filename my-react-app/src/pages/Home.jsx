@@ -16,6 +16,13 @@ import {
   Download
 } from 'lucide-react';
 import profilePic from '../assets/profile.jpg';
+import healthcareThumb from '../assets/healthcare-thumbnail.svg';
+import janaya360Thumb from '../assets/janaya360-thumbnail.svg';
+import hotelThumb from '../assets/hotel-thumbnail.svg';
+import shoppingThumb from '../assets/shopping-thumbnail.svg';
+import reminderThumb from '../assets/reminder-thumbnail.svg';
+import sportThumb from '../assets/sport-thumbnail.svg';
+import healthThumb from '../assets/health-thumbnail.svg';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -42,13 +49,36 @@ const downloadCV = () => {
 
   const projects = [
     {
+      title: 'Smart Healthcare System',
+      subtitle: 'Full-Stack Healthcare Platform',
+      description:
+        'Full-stack healthcare platform using React 19, 6 Spring Boot microservices, and MySQL. Implemented 20+ REST APIs with 3 user roles (Admin, Doctor, Patient). Features JWT-based authentication with OTP email verification, appointment booking with real-time slot management, and PayHere payment gateway integration with revenue-split logic (Doctor 70%, Hospital 30%).',
+      tech: ['React', 'Spring Boot', 'MySQL', 'Docker', 'JWT', 'Java'],
+      image: healthcareThumb,
+      github: 'https://github.com/dilanax/SmartHealthcare-System.git',
+      demo: 'https://smart-healthcare-system.example.com',
+      year: '2026'
+    },
+    {
+      title: 'Janaya360 - Civic Transparency Platform',
+      subtitle: 'Full-Stack MERN Civic Platform',
+      description:
+        'Full-stack civic transparency platform built with MERN stack for tracking political promises, parliamentary activity, public feedback, and news. Developed secure RESTful APIs with JWT-based authentication and role-based access control. Core features include promise management, attendance/session tracking, feedback voting, and notification management.',
+      tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
+      image: janaya360Thumb,
+      github: 'https://github.com/dilanax/Janaya360-Civic-Platform.git',
+      demo: 'https://janaya360-civic-platform.example.com',
+      year: '2026'
+    },
+    {
       title: 'Hasthi Safari Cottage',
       subtitle: 'Full-stack Hotel Management System',
       description:
         'Complete hotel management solution for Hasthi Safari Cottage in Ambilipitiya with booking, room management, and customer tracking features.',
       tech: ['React', 'Vite', 'TailwindCSS', 'JavaScript'],
+      image: hotelThumb,
       github: 'https://github.com/dilanax/HasthiCottage-MERN.git',
-      demo: 'https://hasthi-safari-cottage-client.azurewebsites.net/', // 🔁 replace with your real hosted URL
+      demo: 'https://hasthi-safari-cottage-client.azurewebsites.net/',
       year: '2025'
     },
     {
@@ -57,8 +87,9 @@ const downloadCV = () => {
       description:
         'Feature-rich e-commerce platform with CRUD operations, product management, and shopping cart functionality.',
       tech: ['JavaScript', 'HTML', 'CSS', 'PHP'],
+      image: shoppingThumb,
       github: 'https://github.com/dilanax/e-shopping-Store.git',
-      demo: '', // 🔁 replace with your real hosted URL
+      demo: 'https://e-shopping-store.example.com',
       year: '2025'
     },
     {
@@ -67,8 +98,9 @@ const downloadCV = () => {
       description:
         'Lightweight task management application with add, edit, delete, and complete features for daily productivity.',
       tech: ['JavaScript', 'HTML', 'CSS', 'PHP'],
+      image: reminderThumb,
       github: 'https://github.com/dilanax/Daily_Remainder_Application.git',
-      demo: '', // 🔁 replace with your real hosted URL
+      demo: 'https://daily-reminder-app.example.com',
       year: '2024'
     },
     {
@@ -77,8 +109,9 @@ const downloadCV = () => {
       description:
         'Mobile application for tracking sports activities, managing schedules, and connecting with sports enthusiasts.',
       tech: ['Kotlin', 'XML', 'Android Studio'],
+      image: sportThumb,
       github: 'https://github.com/dilanax/My-Application-FindSport.git',
-      demo: '', // add Play Store / APK link later if you have
+      demo: 'https://play.google.com/store/apps/details?id=com.findsport',
       year: '2025'
     },
     {
@@ -87,8 +120,9 @@ const downloadCV = () => {
       description:
         'Mobile health tracking application for monitoring wellness metrics and maintaining healthy habits.',
       tech: ['Kotlin', 'XML', 'Android Studio'],
+      image: healthThumb,
       github: 'https://github.com/dilanax/Health_Care.git',
-      demo: '', // add Play Store / APK link later if you have
+      demo: 'https://play.google.com/store/apps/details?id=com.healthcare',
       year: '2025'
     }
   ];
@@ -351,54 +385,68 @@ const downloadCV = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 hover:shadow-xl transition-all hover:-translate-y-2 border border-slate-200 group"
+                className="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2 border border-slate-200 group"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 font-medium">{project.subtitle}</p>
+                {/* Project Image */}
+                {project.image && (
+                  <div className="w-full h-48 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">
-                    {project.year}
-                  </span>
-                </div>
-                <p className="text-slate-600 mb-4 leading-relaxed">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100"
-                    >
-                      {tech}
+                )}
+                
+                {/* Project Info */}
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-slate-500 font-medium">{project.subtitle}</p>
+                    </div>
+                    <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">
+                      {project.year}
                     </span>
-                  ))}
-                </div>
+                  </div>
+                  <p className="text-slate-600 mb-4 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Buttons: GitHub + Live Demo */}
-                <div className="flex flex-wrap gap-3 mt-2">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition"
-                  >
-                    <Github size={18} />
-                    GitHub
-                  </a>
-
-                  {project.demo && (
+                  {/* Buttons: GitHub + Live Demo */}
+                  <div className="flex flex-wrap gap-3 mt-2">
                     <a
-                      href={project.demo}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition"
                     >
-                      <ExternalLink size={16} />
-                      Live Demo
+                      <Github size={18} />
+                      GitHub
                     </a>
-                  )}
+
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
