@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import profilePic from '../assets/profile.jpg';
 import healthcareThumb from '../assets/healthcare-thumbnail.svg';
-import janaya360Thumb from '../assets/janaya360-thumbnail.svg';
+import janaya360Thumb from '../assets/janaya360.png';
 import hotelThumb from '../assets/hotel-thumbnail.svg';
 import shoppingThumb from '../assets/shopping-thumbnail.svg';
 import reminderThumb from '../assets/reminder-thumbnail.svg';
@@ -67,7 +67,7 @@ const downloadCV = () => {
       tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
       image: janaya360Thumb,
       github: 'https://github.com/dilanax/Janaya360-Civic-Platform.git',
-      demo: 'https://janaya360-civic-platform.example.com',
+      demo: 'https://janaya360.vercel.app/',
       year: '2026'
     },
     {
